@@ -10,17 +10,8 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        ArrayList<Integer> ints = new ArrayList<Integer>();
-        System.out.println("Введите числа. После введения последовательности чисел введите 0.");
-        while (true)
-        {
-            int input = in.nextInt();
-            if(input==0)
-                break;
-            ints.add(input);
-        }
+        ArrayList<Integer> ints = SetInts();
         ArrayList<Integer> uniqueNumbers = new ArrayList<>();
-
         for (int number : ints) {
             if (!uniqueNumbers.contains(number)) {
                 uniqueNumbers.add(number);
@@ -31,5 +22,16 @@ public class Main {
             System.out.println(uniqueNumber);
         }
     }
-
+        public static ArrayList<Integer> SetInts() {
+            Scanner in = new Scanner(System.in);
+            ArrayList<Integer> ints = new ArrayList<Integer>();
+            System.out.println("Введите числа. После введения последовательности чисел введите 0.");
+            while (true) {
+                int input = in.nextInt();
+                if (input == 0)
+                    break;
+                ints.add(input);
+            }
+            return ints;
+        }
     }
